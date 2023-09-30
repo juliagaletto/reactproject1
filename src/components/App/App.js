@@ -1,22 +1,48 @@
-import './App.css';
+import React from "react";
+import { useState } from "react";
+import "./App.css";
 
 function App() {
+  const user = {
+    name: "Julia Galetto",
+  };
+
+  function MyButton() {
+    const [count, setCount] = useState(0);
+
+    function sayHi() {
+      alert("Hello! Have a good one!");
+      setCount(count + 1);
+    }
+    return (
+      <button onClick={sayHi}>
+        {user.name} and you've clicked this button {count} times!
+      </button>
+    );
+  }
+
+  const services = [
+    { title: "English teacher", id: 1 },
+    { title: "English <> Spanish translator", id: 2 },
+    { title: "Full-stack developer (???)", id: 3 },
+  ];
+
+  const listServices = services.map((service) => (
+    <li key={service.id}>{service.title}</li>
+  ));
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src="/logo.svg" className="App-logo" alt="logo" />
+        <img src="/hoolia2.png" className="App-logo" alt="logo" />
+        <h1>Hi there. Welcome aboard.</h1>
         <p>
-        TINCHO <code>src/App.js</code> and save to reload.
+          I'm <MyButton />. Let me show you what I'm good (???) at.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
+      <div>
+        <ul>{listServices}</ul>
+      </div>
     </div>
   );
 }
