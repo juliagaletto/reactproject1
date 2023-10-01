@@ -5,6 +5,7 @@ import "./App.css";
 function App() {
   const user = {
     name: "Julia Galetto",
+    /*photo: "../../../public/Juli.jpg",*/
   };
 
   function MyButton() {
@@ -15,9 +16,9 @@ function App() {
       setCount(count + 1);
     }
     return (
-      <button onClick={sayHi}>
-        {user.name} and you've clicked this button {count} times!
-      </button>
+      <div>
+        <button onClick={sayHi}>this button</button> {count} times!
+      </div>
     );
   }
 
@@ -37,7 +38,8 @@ function App() {
         <img src="/hoolia2.png" className="App-logo" alt="logo" />
         <h1>Hi there. Welcome aboard.</h1>
         <p>
-          I'm <MyButton />. Let me show you what I'm good (???) at.
+          I'm {user.name}, and you've clicked <MyButton /> Let me show you what
+          I'm good (???) at.
         </p>
       </header>
       <div>
