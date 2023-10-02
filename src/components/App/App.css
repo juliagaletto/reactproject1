@@ -23,6 +23,10 @@
   color: rgb(60, 57, 57);
 }
 
+.About h1 {
+  color:#564f53
+}
+
 .App-footer {
   display: flex;
   align-items: center;

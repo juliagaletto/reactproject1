@@ -3,25 +3,17 @@ import { useState } from "react";
 import "./App.css";
 import Navbar from "../Navbar";
 
-
 function App() {
   const user = {
     name: "Julia Galetto",
     photo: "/jg.jpeg",
   };
 
-  function MyButton() {
-    const [count, setCount] = useState(0);
+  const [count, setCount] = useState(0);
 
-    function sayHi() {
-      alert("Hello! Have a good one!");
-      setCount(count + 1);
-    }
-    return (
-      <div>
-        <button onClick={sayHi}>this button</button> {count} times!
-      </div>
-    );
+  function sayHi() {
+    alert("Hello! Have a good one!");
+    setCount(count + 1);
   }
 
   const services = [
@@ -29,11 +21,6 @@ function App() {
     { title: "English <> Spanish translator", id: 2 },
     { title: "Full-stack developer (???)", id: 3 },
   ];
-
-  const listServices = services.map((service) => (
-    <li key={service.id}>{service.title}</li>
-  ));
-
 
   return (
     <div className="App">
@@ -46,12 +33,17 @@ function App() {
       <div className="About">
         <h1>Hi there. Welcome aboard.</h1>
         <p>
-          I'm {user.name}, and you've clicked <MyButton /> Let me show you what
-          I'm good (???) at.
+          I'm {user.name}, and you've clicked{" "}
+          <button onClick={sayHi}>this button</button> {count} times! Let me
+          show you what I'm good (???) at.
         </p>
       </div>
       <div className="Services">
-        <ul className="Services__list">{listServices}</ul>
+        <ul className="Services__list">
+          {services.map((service) => (
+            <li key={service.id}>{service.title}</li>
+          ))}
+        </ul>
       </div>
       <div className="App-footer">
         <img src={user.photo} className="JG-photo" alt="JG" />
