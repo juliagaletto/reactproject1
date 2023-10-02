@@ -1,11 +1,13 @@
 import React from "react";
 import { useState } from "react";
 import "./App.css";
+import Navbar from "../Navbar";
+
 
 function App() {
   const user = {
     name: "Julia Galetto",
-    /*photo: "../../../public/Juli.jpg",*/
+    photo: "/jg.jpeg",
   };
 
   function MyButton() {
@@ -32,18 +34,28 @@ function App() {
     <li key={service.id}>{service.title}</li>
   ));
 
+
   return (
     <div className="App">
       <header className="App-header">
         <img src="/hoolia2.png" className="App-logo" alt="logo" />
+      </header>
+      <div className="Navbar">
+        <Navbar />
+      </div>
+      <div className="About">
         <h1>Hi there. Welcome aboard.</h1>
         <p>
           I'm {user.name}, and you've clicked <MyButton /> Let me show you what
           I'm good (???) at.
         </p>
-      </header>
-      <div>
-        <ul>{listServices}</ul>
+      </div>
+      <div className="Services">
+        <ul className="Services__list">{listServices}</ul>
+      </div>
+      <div className="App-footer">
+        <img src={user.photo} className="JG-photo" alt="JG" />
+        <footer>That's all folks! Be patient, I'm learning.</footer>
       </div>
     </div>
   );
