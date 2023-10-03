@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
-import "./App.css";
-import Navbar from "../Navbar";
+import "./../../styles/globals.css";
+import Navbar from "../Navbar/Navbar.component";
 
 function App() {
   const user = {
